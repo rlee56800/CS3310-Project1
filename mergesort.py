@@ -1,4 +1,6 @@
 import math
+import time
+start_time = time.time()
 
 def mergesort(a):
     n = len(a)
@@ -33,7 +35,25 @@ def merge(a1, a2, a):
         p+=1
         p2+=1
 
+'''
+#TESTING
 arr = [6, 3, 7, 8, 0, 4]
-print("Given array is", arr)
+print(arr)
 mergesort(arr)
-print("Sorted array is: ", arr)
+print(arr)
+
+'''
+
+
+arr=[]
+
+n = 1000
+print(n)
+
+for i in range(n):
+   arr.append(random.randint(0,100))
+
+#print(arr)
+mergesort(arr)
+#print(arr)
+print("Process finished --- %s seconds ---" % (time.time() - start_time))
