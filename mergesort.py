@@ -60,7 +60,7 @@ print(arr)
 
 arr=[]
 
-n = 50000000
+n = 90000
 print(n) # to show which number is tested
 
 for i in range(n):

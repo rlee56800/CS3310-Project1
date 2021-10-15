@@ -1,7 +1,7 @@
 import random
 import time
 
-start_time = time.time()
+
 
 def partition(low, high, arr):
     j = low
@@ -32,14 +32,15 @@ print(arr)
 '''
 arr=[]
 
-n = 5
+n = 90000
 print(n) # to show which number is tested
 
 for i in range(n):
    arr.append(random.randint(0,100))
 
-print(arr)
+start_time = time.time()
+#print(arr)
 pivotpoint = 0
 quicksort(0, len(arr), arr)
-print(arr)
+#print(arr)
 print("Process finished --- %s seconds ---" % (time.time() - start_time))
