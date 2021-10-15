@@ -1,8 +1,6 @@
 import random
 import time
 
-start_time = time.time()
-
 def mergesort(a):
     n = len(a)
 
@@ -68,6 +66,7 @@ print(n) # to show which number is tested
 for i in range(n):
    arr.append(random.randint(0,100))
 
+start_time = time.time()
 #print(arr)
 mergesort(arr)
 #print(arr)
