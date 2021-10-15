@@ -1,21 +1,18 @@
-import random
 import time
 
 start_time = time.time()
 
-def towerofhanoi():
-    print()
+def TowerOfHanoi(discs, moveFrom, moveTo, other):
+    if discs==1:
+        print("Move disk", discs, "from peg", moveFrom, "to peg", moveTo)
+        return
+    else:
+        TowerOfHanoi(discs-1, moveFrom, other, moveTo)
+        print("Move disk", discs, "from peg", moveFrom, "to peg", moveTo)
+        TowerOfHanoi(discs-1, other, moveTo, moveFrom)
 
-
-arr=[]
-
-n = 50000000
+         
+n = 32
 print(n) # to show which number is tested
-
-for i in range(n):
-   arr.append(random.randint(0,100))
-
-#print(arr)
-towerofhanoi(arr)
-#print(arr)
+TowerOfHanoi(n, 'a', 'b', 'c')
 print("Process finished --- %s seconds ---" % (time.time() - start_time))
