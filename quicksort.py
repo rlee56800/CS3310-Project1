@@ -3,27 +3,33 @@ import time
 
 start_time = time.time()
 
-def quicksort(low, high):
-    pivotpoint = 0
-    if low < high:
-        partition(low, high, pivotpoint)
-        quicksort(low, pivotpoint-1)
-        quicksort(pivotpoint + 1, high)
-
-def partition(low, high, ppoint):
+def partition(low, high):
+    #pivotpoint = low
     i = low + 1
     j = low
     pivotitem = arr[low]
-    while i <= high:
+    print("q")
+    while i < high:
+        print("j")
         if arr[i] < pivotitem:
             j += 1
             arr[i], arr[j] = arr[j], arr[i]
+        i += 1
     pivotpoint = j
     arr[low], arr[pivotpoint] = arr[pivotpoint], arr[low]
+    pivotpoint = high
+
+def quicksort(low, high):
+    #pivotpoint = low
+    if low < high:
+        partition(low, high)
+        quicksort(low, pivotpoint-1)
+        quicksort(pivotpoint+1, high) #idk
 
 # TESTING
 arr = [9, 2, 7, 8, 1]
-print()
+pivotpoint = 0
+print(arr)
 quicksort(0, len(arr)-1)
 print(arr)
 '''
