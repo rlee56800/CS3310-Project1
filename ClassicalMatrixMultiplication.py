@@ -1,10 +1,13 @@
 import random
 import time
 
-start_time = time.time()
-
 def matrixmult(mult1, mult2, prod):
-    print()
+    n = len(mult1)
+    for i in range(n):
+        for j in range(n):
+            #prod[i][j] = 0
+            for k in range(n):
+                prod[i][j] = prod[i][j] + mult1[i][k] * mult2[k][j]
 
 
 
@@ -12,8 +15,9 @@ def matrixmult(mult1, mult2, prod):
 a = []
 b = []
 c = []
-n = 3
+n = 1024
 
+print(n)
 for i in range(n):
     a1 = []
     b1 = []
@@ -26,11 +30,19 @@ for i in range(n):
     b.append(b1)
     c.append(c1)
 
+
 #print(a)
 #print(b)
 #print(c)
 
-#print(arr)
+# CONTROLLED MATRIX GENERATION
+#a = [[1, 2, 3],[4, 5, 6], [7, 8, 9]]
+#b = [[1, 2, 1], [2, 4, 6], [7, 2, 5]]
+#c = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+#c-> [[26,16,28],[56,40,64],[86,64,100]]
+
+start_time = time.time()
+#print(c)
 matrixmult(a, b, c)
-#print(arr)
+#print(c)
 print("Process finished --- %s seconds ---" % (time.time() - start_time))
